@@ -1,18 +1,68 @@
 import "./style.css";
 
-let body = document.querySelector("body");
-let h1 = document.createElement("h1");
-h1.setAttribute("id", "h1RedFont");
-h1.classList.add("redFont");
-h1.textContent = "This font should be red";
-body.appendChild(h1);
+function getComputerChoice() {
+    let rps = ["rock", "paper", "scissor"];
+    let rand = Math.floor(Math.random() * 3 + 0);
+    return rps[rand];
+}
 
-let newDiv = document.createElement("div");
-newDiv.setAttribute("id", "newDiv");
-let p1 = document.createElement("p");
-let testerFolderLink = document.createElement("a");
-testerFolderLink.setAttribute("href", "../testerFolder/index.html");
-testerFolderLink.textContent = "testerFolderLink";
-p1.appendChild(testerFolderLink);
-newDiv.appendChild(p1);
-body.appendChild(newDiv);
+function getHumanChoice() {
+    let ans = prompt("Choose 'rock', 'paper' or 'scissor'").toLowerCase();
+    if (ans === "rock") {
+        return "rock";
+    } else if (ans === "paper") {
+        return "paper";
+    } else if (ans === "scissor") {
+        return "scissor";
+    } else {
+        getHumanChoice();
+    }
+}
+
+function playRound(getComputerChoice, getHumanChoice) {
+    let compChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    return [compChoice, humanChoice];
+}
+
+function playGame(rounds) {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let i = rounds; i > 0; i--) {
+        let result = playRound(getComputerChoice, getHumanChoice);
+        let cChoice = result[0];
+        let hChoice = result[1];
+
+        if (cChoice === "rock" && hChoice === "scissor") {
+            computerScore += 1;
+            console.log("You lost that round!");
+        } else if (cChoice === "paper" && hChoice === "rock") {
+            computerScore += 1;
+            console.log("You lost that round!");
+        } else if (cChoice === "scissor" && hChoice === "paper") {
+            computerScore += 1;
+            console.log("You lost that round!");
+        } else if (cChoice === hChoice) {
+            humanScore += 0;
+            computerScore += 0;
+            console.log("It was a tie");
+        } else {
+            humanScore += 1;
+            console.log("You won that round!");
+        }
+    }
+    if (humanScore > computerScore) {
+        alert(
+            `You won! with a score of ${humanScore} vs the computer score of ${computerScore}`
+        );
+    } else if (computerScore > humanScore) {
+        alert(
+            `You Lost. Your score was ${humanScore} vs the computer score of ${computerScore}`
+        );
+    } else {
+        alert(`It was a tie. Better luck next time!`);
+    }
+}
+
+playGame(5);
