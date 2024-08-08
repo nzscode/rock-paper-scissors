@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="winBar">
+            <div id="winBarMsg"></div>
+            <button id="nextRoundBtn">Next Round</button>
+        </div>
+        <main>
+            <div id="btnBar">
+                <button id="rockBtn" class="rpsBtn">Rock</button>
+                <button id="paperBtn" class="rpsBtn">Paper</button>
+                <button id="scissorsBtn" class="rpsBtn">Scissors</button>
+            </div>
+            <div id="scoreBar">
+                <div id="choiceBanner">
+                    <div id="compTurn" class="turn">
+                        <div class="turnBanner">Computer</div>
+                        <div id="compChoice"></div>
+                    </div>
+                    <div id="userTurn" class="turn">
+                        <div class="turnBanner">User</div>
+                        <div id="userChoice"></div>
+                    </div>
+                </div>
+                <div id="scoreContainer">
+                    <div id="score">
+                        <div id="compScoreSection">
+                            <div class="scoreTitle">Computer</div>
+                            <div id="compScore" class="scoreCL">0</div>
+                        </div>
+                        <div id="userScoreSection">
+                            <div class="scoreTitle">User</div>
+                            <div id="userScore" class="scoreCL">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="finalResultContainer"></div>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

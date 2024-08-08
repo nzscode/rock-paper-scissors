@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    display: grid;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 25% 50%;
+    grid-template-rows: 100%;
+}
+
+#btnBar {
+    /* background-color: purple; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rpsBtn {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 5px 5px 10px lightgray;
+}
+
+#scoreBar {
+    /* background-color: green; */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+#choiceBanner {
+    /* background-color: yellow; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+.turn {
+    text-align: center;
+    padding: 15px;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+#scoreContainer {
+    background-color: white;
+    border: 5px solid #000;
+    border-radius: 15px;
+    width: 500px;
+    height: 400px;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+/* #turnBanner {
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+} */
+
+#score {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+#compScoreSection {
+    border-right: 3px solid black;
+}
+
+#userScoreSection {
+    border-left: 3px solid black;
+}
+.scoreTitle {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.scoreCL {
+    text-align: center;
+    font-size: 250px;
+}
+
+button {
+    cursor: pointer;
+}
+.btnDisable {
+    cursor: not-allowed;
+}
+
+:disabled {
+    background-color: #0000004d;
+    color: #fff;
+}
+
+#finalResultContainer {
+    display: none;
+    position: fixed;
+    background-color: #000000b7;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+}
+
+#winBar {
+    display: none;
+    position: fixed;
+    background-color: #000000b7;
+    width: 100vw;
+    height: 250px;
+    overflow: hidden;
+    margin: 0;
+    top: 010%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+}
